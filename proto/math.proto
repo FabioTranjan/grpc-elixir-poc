@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package dc;
+
+message Sum {
+  float a = 1;
+  float b = 2;
+}
+
+message SumRequest {
+  Sum sum = 1;
+}
+
+message SumResponse {
+  float result = 1;
+}
+
+service MathService {
+  rpc Sum(SumRequest) returns (SumResponse);
+}
